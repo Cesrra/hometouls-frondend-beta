@@ -14,7 +14,7 @@ export class EmployeeService {
 
   getAllEmployees()
   {
-    return this.http.get<Employee[]>('http://localhost:4000/api')
+    return this.http.get<Employee[]>('')
   }
 
 }

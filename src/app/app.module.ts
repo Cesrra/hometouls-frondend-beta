@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
@@ -17,6 +17,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from './presentation/layout/layout.module';
 import { appEffects, appReducer } from './domain/store';
+import { AppInterceptorService } from './core/interceptors/app.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,11 +33,17 @@ import { appEffects, appReducer } from './domain/store';
     CoreModule,
     LayoutModule,
     StoreModule,
-    StoreModule.forRoot({ employee: employeeReducer }, appReducer),
+    StoreModule.forRoot(appReducer), /* { employee: employeeReducer }, */
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

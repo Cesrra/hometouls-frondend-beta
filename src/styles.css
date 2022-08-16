@@ -2,6 +2,7 @@
   --primary-color: #FFC06A;
   --secondary-color: #E9765B;
   --tertiary-color: #ff7a59;
+  --text-normal-color: #f1f1f1
 }
 body {
   font-family: 'Poppins !importan'; /* titulos */
