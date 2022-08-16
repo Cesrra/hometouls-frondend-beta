@@ -21,7 +21,14 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    // "paths": {
+    //   "@facades/": ["src/app/facades"],
+    //   "@presentation/": ["src/app/presentation/*"],
+    //   "@domain/": ["src/app/domain/*"],
+    //   "@data/": ["src/app/data/*"],
+    //   "@core/": ["src/app/core/*"],
+    // }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

@@ -16,10 +16,10 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.employeeService.getAllEmployees()
-    // .subscribe(data => {
-    //   this.employees = data;
-    // });
+    this.employeeService.getAllEmployees()
+    .subscribe(data => {
+      this.employees = data;
+    });
   }
 
 }

@@ -14,11 +14,14 @@ import { EffectsModule } from '@ngrx/effects';
 
 import { employeeReducer } from './core/state/employee/employee.reducer';
 import { EmployeeComponent } from './employee/employee.component';
+import { CoreModule } from './core/core.module';
+import { LayoutModule } from './presentation/layout/layout.module';
+import { appEffects, appReducer } from './domain/store';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,12 @@ import { EmployeeComponent } from './employee/employee.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    CoreModule,
+    LayoutModule,
+    StoreModule,
+    StoreModule.forRoot({ employee: employeeReducer }, appReducer),
+    EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    StoreModule.forRoot({ employee: employeeReducer }),
-    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]
