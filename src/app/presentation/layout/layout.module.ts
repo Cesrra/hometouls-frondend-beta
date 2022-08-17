@@ -7,6 +7,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { BaseLoggedComponent } from './base-logged/base-logged.component';
 import { BaseAuthComponent } from './base-auth/base-auth.component';
 import { RouterModule } from '@angular/router';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgChartsModule
   ]
 })
 export class LayoutModule { }
