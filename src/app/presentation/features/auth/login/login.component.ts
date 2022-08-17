@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { AuthFacade } from 'src/app/facades/auth.facade';
-import { ILogin } from 'src/app/models/auth.model';
+import { ILogin } from 'src/app/core/models/auth.model';
 
 @Component({
   selector: 'app-login',

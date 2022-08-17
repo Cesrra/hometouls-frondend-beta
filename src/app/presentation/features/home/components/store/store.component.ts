@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChange } from '@angular/core';
-import { IStore } from 'src/app/models/home.models';
+import { IStore } from 'src/app/core/models/home.models';
 
 @Component({
   selector: 'app-store',

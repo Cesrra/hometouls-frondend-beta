@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { RootState } from "../domain/store";
 import { getStoresAction } from "../domain/store/home/home.actions";
 import * as homeSelectors from "../domain/store/home/home.selectors";
-import { IStore } from "../models/home.models";
+import { IStore } from "../core/models/home.models";
 
 
 @Injectable({ providedIn: 'root' })

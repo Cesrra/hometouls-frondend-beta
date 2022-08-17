@@ -1,4 +1,4 @@
-import { ILogin } from "src/app/models/auth.model";
+import { ILogin } from "src/app/core/models/auth.model";
 
 export interface AuthState {
   loginData: ILogin | null;

@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ILogin } from "src/app/models/auth.model";
+import { ILogin } from "src/app/core/models/auth.model";
 
 export const loginAction = createAction(
   "[Auth] Login Action",

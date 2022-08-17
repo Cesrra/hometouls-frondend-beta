@@ -1,4 +1,4 @@
-import { IProducts, IProject, IStore } from "src/app/models/home.models";
+import { IProducts, IProject, IStore } from "src/app/core/models/home.models";
 
 
 export interface HomeState {

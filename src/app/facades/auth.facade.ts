@@ -7,7 +7,7 @@ import {
 } from '../domain/store/auth/auth.actions';
 import { AuthState } from '../domain/store/auth/auth.state';
 import * as authSelectors from '../domain/store/auth/auth.selectors';
-import { ILogin } from '../models/auth.model';
+import { ILogin } from '../core/models/auth.model';
 import { RootState } from '../domain/store';
 
 @Injectable({ providedIn: 'root' })

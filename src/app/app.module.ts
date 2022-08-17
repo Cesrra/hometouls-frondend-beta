@@ -12,8 +12,6 @@ import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { employeeReducer } from './core/state/employee/employee.reducer';
-import { EmployeeComponent } from './employee/employee.component';
 import { CoreModule } from './core/core.module';
 import { LayoutModule } from './presentation/layout/layout.module';
 import { appEffects, appReducer } from './domain/store';
@@ -23,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
     LayoutModule,
     StoreModule,
-    StoreModule.forRoot(appReducer), /* { employee: employeeReducer }, */
+    StoreModule.forRoot(appReducer),
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     BrowserAnimationsModule,

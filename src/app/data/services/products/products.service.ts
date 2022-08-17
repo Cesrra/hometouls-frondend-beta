@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { IStore } from 'src/app/models/home.models';
+import { IStore } from 'src/app/core/models/home.models';
 
 @Injectable({
   providedIn: 'root'

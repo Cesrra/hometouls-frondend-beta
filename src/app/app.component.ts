@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Employee } from './models/employee';
-import { EmployeeService } from './services/employee.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +7,9 @@ import { EmployeeService } from './services/employee.service';
 })
 export class AppComponent implements OnInit {
   title = 'hometuls-beta';
-  employees: Employee[] = [];
 
-  constructor(
-    private employeeService: EmployeeService
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.employeeService.getAllEmployees()
-    .subscribe(data => {
-      this.employees = data;
-    });
-  }
+  ngOnInit(): void { }
 
 }
