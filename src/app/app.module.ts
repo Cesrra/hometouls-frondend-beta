@@ -18,6 +18,7 @@ import { CoreModule } from './core/core.module';
 import { LayoutModule } from './presentation/layout/layout.module';
 import { appEffects, appReducer } from './domain/store';
 import { AppInterceptorService } from './core/interceptors/app.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AppInterceptorService } from './core/interceptors/app.interceptor';
     StoreModule.forRoot(appReducer), /* { employee: employeeReducer }, */
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    BrowserAnimationsModule,
   ],
   providers: [
     {

@@ -1,12 +1,12 @@
-import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { RooState } from "..";
+import { createSelector } from "@ngrx/store";
+import { RootState } from "..";
 import { AuthState } from "./auth.state";
 
 export interface AppState {
   feature: AuthState
 }
 
-export const selectAuthFeatureState = (state: RooState) => state.auth;
+export const selectAuthFeatureState = (state: RootState) => state.auth;
 
 export const selectIsLoadingLogin = createSelector(
   selectAuthFeatureState,

@@ -39,3 +39,6 @@ p {
   box-shadow: 0 4px 24px 0 rgb(34 41 47 / 10%);
   word-wrap: break-word;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
