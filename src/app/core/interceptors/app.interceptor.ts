@@ -20,16 +20,20 @@ export class AppInterceptorService implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     let reqModified;
+    let urlComplement = '';
     const headers: any = {
       'Content-Type': 'application/json',
     };
 
-    const token = localStorage.getItem('sales.token');
+    const token = localStorage.getItem('token');
     if (token) {
       headers.Authorization = `Bearer ${token}`;
     }
+    if(req.url === 'user' && req.method === 'GET'){
+      urlComplement = '/read/62fbfe5939f99a6002d82698';
+    }
     reqModified = req.clone({
-      url: API_URL + req.url,
+      url: API_URL + req.url + urlComplement,
       setHeaders: headers,
     });
     return next.handle(reqModified).pipe(

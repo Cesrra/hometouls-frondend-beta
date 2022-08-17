@@ -7,11 +7,12 @@ export interface IUser {
   _id: number;
   name: string;
   email: string;
-  created_at: Date;
-  updated_at: Date;
+  phone: number
+  birthdate?: Date
+  location?: string
+  password: string
 }
 
 export interface IUserResponse {
-  jwt: string;
   user: IUser;
 }

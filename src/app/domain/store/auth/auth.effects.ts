@@ -19,9 +19,9 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(authActions.loginAction),
       exhaustMap((action) =>
-        this._authService.login(action.data).pipe(
+        this._authService.login().pipe(
           map((response: any) => {
-            localStorage.setItem('sales.token', response.jwt);
+            localStorage.setItem('token', response.password);
             return authActions.loginSuccessAction();
           }),
           catchError((error) =>

@@ -27,7 +27,14 @@ export class LoginComponent implements OnInit {
 
   onSubmitForm() {
     if(this.loginForm.invalid){
-      console.log('Error invalid form');
+      let errorMessage: string = '';
+      const { email, password } = this.loginForm.controls;
+      if(email.status === 'INVALID') {
+        errorMessage = 'Email invalid';
+      }else if(password.status === 'INVALID'){
+        errorMessage = 'Password are reuired';
+      }
+      this._authFacade.setErrorLogin(errorMessage);
       return;
     }
     const data: ILogin = {...this.loginForm.value}

@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private _http: HttpClient) { }
 
-  login(data: ILogin): Observable<IUserResponse> {
-    return this._http.post<IUserResponse>('create',data)
+  login(): Observable<IUserResponse> {
+    return this._http.get<IUserResponse>('user')
   }
 }

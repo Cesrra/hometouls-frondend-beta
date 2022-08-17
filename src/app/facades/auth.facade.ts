@@ -8,7 +8,7 @@ import {
 import { AuthState } from '../domain/store/auth/auth.state';
 import * as authSelectors from '../domain/store/auth/auth.selectors';
 import { ILogin } from '../models/auth.model';
-// import { RootState } from '../domain/store';
+import { RooState } from '../domain/store';
 
 @Injectable({ providedIn: 'root' })
 export class AuthFacade {
@@ -16,7 +16,7 @@ export class AuthFacade {
   isError$: Observable<string | null>;
 
   constructor(
-    private readonly _store: Store<authSelectors.AppState>,
+    private readonly _store: Store<RooState>,
     private _storee: Store
   ) {
     this.isLoading$ = this._store.select(authSelectors.selectIsLoadingLogin);
