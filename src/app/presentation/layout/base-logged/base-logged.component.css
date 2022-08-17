@@ -1,0 +1,24 @@
+.layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+}
+
+.layout-menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.layou-page {
+  padding: 4rem 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .layout-menu {
+    display: none;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 100% 1fr;
+  }
+}
